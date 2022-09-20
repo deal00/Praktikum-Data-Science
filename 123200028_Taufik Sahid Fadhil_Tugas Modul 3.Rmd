@@ -1,0 +1,71 @@
+---
+title: "Tugas Modul 3_Praktikum Data Science"
+author: "Taufik Sahid Fadhil"
+date: "2022-09-20"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r library}
+library(dslabs)
+data(murders)
+```
+
+## Soal Nomor 1
+
+Gunakan fungsi str untuk memeriksa struktur objek "murders". Manakah dari pernyataan berikut ini yang paling menggambarkan karakter dari tiap variabel pada data frame?
+
+```{r Jawaban Nomor 1}
+
+str(murders)
+```
+
+Yang paling benar adalah C
+
+## Soal Nomor 2
+
+Sebutkan apa saja nama kolom yang digunakan pada data frame
+
+```{r Jawaban Nomor 2}
+names(murders)
+```
+
+## Soal Nomor 3
+
+Gunakan operator aksesor (\$) untuk mengekstrak informasi singkatan negara dan menyimpannya pada objek "a". Sebutkan jenis class dari objek tersebut.
+
+```{r Jawaban Nomor 3}
+a<-murders$abb
+class(a)
+```
+
+## Soal Nomor 4
+
+Gunakan tanda kurung siku untuk mengekstrak singkatan negara dan menyimpannya pada objek "b". Tentukan apakah variabel "a" dan "b" bernilai sama?
+
+```{r Jawaban Nomor 4}
+b<-murders[["abb"]]
+show (b)
+
+```
+
+a=b
+
+## Soal Nomor 5
+
+Variabel region memiliki tipe data: factor. Dengan satu baris kode, gunakan fungsi level dan length untuk menentukan jumlah region yang dimiliki dataset.
+
+```{r Jawaban Nomor 5}
+length(levels(murders$region))
+```
+
+## Soal Nomor 6
+
+Fungsi table dapat digunakan untuk ekstraksi data pada tipe vektor dan menampilkan frekuensi dari setiap elemen. Dengan menerapkan fungsi tersebut, dapat diketahui jumlah state pada tiap region. Gunakan fungsi table dalam satu baris kode untuk menampilkan tabel baru yang berisi jumlah state pada tiap region.
+
+```{r Jawaban Nomor 6}
+table(murders$region) 
+```
